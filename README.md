@@ -2,9 +2,10 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
-| | |
-| | |
+| Saiid El Hajj Chehade | 360859 |
+| Christian Knabenhans | 257303 |
+| Mathilde Aliénor Raynal | 259176 |
+| Malo Lucas Perez | 273051 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
