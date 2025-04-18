@@ -207,6 +207,7 @@ section {
     left: 0;
 }
 
+
 #purpose[open] > summary::before {
     background-image: url("./assets/images/eye-open-icon.png");
 }
@@ -258,7 +259,7 @@ section {
     display: grid;
     justify-content: stretch;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    align-items:stretch;
     width: 100%;
     margin-top: 2rem;
 }
@@ -267,6 +268,7 @@ section {
     text-decoration: none;
     flex-grow: 1;
     text-align: center;
+    height:100%;
 }
 
 #nav-section > a > div {
@@ -274,6 +276,7 @@ section {
     color: var(--background-color);
     padding: 1rem;
     transition: background-color 0.3s ease;
+    height: 100%;
 }
 
 #nav-section > a > div:hover {
@@ -287,13 +290,6 @@ section {
     font-size: 4rem;
     font-family: "IBM Plex Mono", monospace;
     margin: 0.5rem 0;
-}
-
-#law-nav {
-    background: url("./assets/images/law-logo.jpeg");
-    background-size:auto 150%;
-    background-repeat: no-repeat;
-    background-position: -300% center;
 }
 
 /* Article Correlation */
@@ -361,4 +357,246 @@ section {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 400;
+}
+
+/* Filters Section */
+.multi-select-tag .dropdown {
+    background-color: var(--background-color)!important;
+}
+
+.multi-select-tag .tag-item {
+    color: var(--background-color)!important;
+    background-color: var(--primary-color)!important;
+}
+
+.multi-select-tag .tag-container, .multi-select-tag .tag-input {
+    background-color: var(--background-color)!important;
+    color: var(--text-color)!important;
+    border-radius: 0!important;
+    border-color: #36463e!important;
+}
+
+.multi-select-tag .li:hover {
+    background-color: var(--primary-color)!important;
+    color: var(--background-color)!important;
+}
+
+input[name="datefilter"] {
+    background-color: var(--background-color)!important;
+    color: var(--text-color)!important;
+    border-radius: 0!important;
+    padding: 0.9rem;
+    border-style: solid;
+    border-color: #36463e!important;
+}
+
+#filters-section label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-family: "IBM Plex Mono", monospace;
+    padding-bottom: 0.4rem;
+    display: block;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+#filters-section > div > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+#filters-section > div {
+    padding: 1rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border: 2px dashed var(--text-color);
+    position: relative;
+}
+
+#filters-section > div > h1 {
+    position: absolute;
+    top:-2.5rem;
+    left: 1rem;
+    background-color: var(--background-color);
+    padding: 0 1rem;
+}
+
+#filters-section:not(.floating) {
+    animation: fade-in-and-zoom 0.3s ease-in-out;
+}
+
+@keyframes fade-in-and-zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#filters-section.floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
+    padding: 1rem;
+    margin-top: 0;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--background-color)!important;
+}
+
+#filters-section.floating:not(.closed) {
+    animation: slide-down 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    100% {
+        transform: translateY(-90%);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}
+
+#filters-section.floating.closed  {
+    animation: slide-up 0.3s ease-in-out;
+    transform: translateY(-90%);
+}
+
+#filters-section.floating.closed > div > h1 {
+    position: fixed;
+    top: calc(100% - 1rem);
+    left: 0;
+    margin:0;
+    padding:1rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    width: fit-content;
+
+    transition: top 0.3s ease-in-out;
+}
+
+#filters-section.floating > div > h1::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("./assets/images/eye-open-icon.png");
+    background-size: cover;
+    background-position: center;
+    margin-right: 0rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#filters-section.floating.closed > div > h1::before {
+    background-image: url("./assets/images/eye-closed-icon.png");
+}
+
+#filters-section.floating.closed.active > div > h1::after {
+    content: "You have active Filters"; 
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.7rem;
+    background-color: var(--primary-color);
+}
+
+#filters-section.floating label {
+    color: var(--background-color);
+    opacity: 1;
+}
+
+#filters-section.floating > div {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#filters-section.floating > div > h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding:0;
+    padding-left: 2rem;
+    font-size: 1rem;
+    background-color: transparent;
+    
+}
+
+#filters-section.floating .multi-select-tag .dropdown {
+    background-color: var(--secondary-color)!important;
+    border-color: var(--background-color)!important;
+}
+
+#filters-section.floating .multi-select-tag .tag-container, 
+#filters-section.floating .multi-select-tag .tag-input {
+    background-color: var(--secondary-color)!important;
+    color: var(--background-color)!important;
+    border-color: var(--background-color)!important;
+}
+
+
+#filters-section.floating input[name="datefilter"] {
+    background-color: var(--secondary-color)!important;
+    color: var(--background-color)!important;
+    border-radius: 0!important;
+    padding: 0.9rem;
+    border-style: solid;
+    border-color: var(--background-color)!important;
+}
+
+#repeat-offenders-histogram {
+    position: relative;
+}
+
+#repeat-offenders-histogram .placeholder {
+    height: 35rem;
+}
+
+#repeat-offenders-histogram .controls {
+    height: 20rem;
+    width: 10rem;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: -1.5rem;
+    padding: 0.5rem;
+    transform: translateX(100%);
+    top: 0;
+}
+
+#other-section .plots {
+    width: 90vw;
+    margin: 0 -30%;
+}
+
+#other-section .plots .placeholder {
+    aspect-ratio: auto;
+    height: 20rem;
+}
+
+
+footer {
+    margin-top: 10rem;
 }
