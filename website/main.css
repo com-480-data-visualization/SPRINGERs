@@ -239,15 +239,33 @@ section {
     height: 40rem;
     margin-top:1rem;
     transform: translateX(-20%);
-    mask-image: 
+    /* mask-image: 
         linear-gradient(to bottom, transparent 0%, black 10%), 
         linear-gradient(to left, transparent 6%, black 25%, black 75%, transparent 100%);
-    mask-composite: intersect;
+    mask-composite: intersect; */
     border-bottom: 1px solid var(--text-color);
 
 }
 
+#map > svg {
+    height: 100%;
+}
 
+.tooltip {
+    position: absolute;
+    background-color: black;
+    display: none;;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(30, 139, 141, 0.2);
+    z-index: 100;
+    pointer-events: none;
+}
+
+#map-section {
+    position: relative;
+}
 #map-section > .section-title {
     position: absolute;
     z-index: 2;
@@ -296,6 +314,7 @@ section {
 
 #articles-section {
     margin-top: 5rem;
+    position: relative;
 }
 
 #articles-section .content {
@@ -321,6 +340,19 @@ section {
 
 #articles-section nav > a {
     color: var(--primary-color);
+    font-family: "IBM Plex Mono", monospace;
+    cursor: pointer;
+}
+
+#articles-section .chapter-name {
+    background-color: var(--secondary-color);
+    font-size: 0.5rem;
+    color: black;
+    padding: 0.2rem 0.5rem;
+}
+
+#articles-section nav > a.active {
+    color: var(--secondary-color);
     font-family: "IBM Plex Mono", monospace;
 }
 

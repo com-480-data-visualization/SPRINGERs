@@ -1,260 +1,238 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COM480-SPRINGERs GDPR Violations</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=switzer@100,101,300,400,401,700,701&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/css/multi-select-tag.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
-    />
-  </head>
-  <body>
-    <!-- Title Section -->
 
-    <main>
-      <header id="title-section">
-        <img
-          class="bg-img"
-          src="./assets/images/main-bg.webp"
-          alt="Main Background"
-        />
-        <h1 class="heading">GDPR Violation Fines: <b>Do they work?</b></h1>
-        <h4
-          >Visualizing the reaction of offending web-service providers to GDPR
-          fines</h4
-        >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COM480-SPRINGERs GDPR Violations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@100,101,300,400,401,700,701&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/css/multi-select-tag.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
 
-        <!-- Authors -->
-        <p>
-          By the SPRINGERs: Christian Knabenhans, Mathilde Raynal, Malo Perez, &
-          Saiid El Hajj Chehade
-        </p>
-      </header>
+<body>
+  <!-- Title Section -->
 
-      <!-- Purpose -->
+  <main>
+    <header id="title-section">
+      <img class="bg-img" src="./assets/images/main-bg.webp" alt="Main Background" />
+      <h1 class="heading">GDPR Violation Fines: <b>Do they work?</b></h1>
+      <h4>Visualizing the reaction of offending web-service providers to GDPR
+        fines</h4>
 
-      <details id="purpose" class="box-shadow with-top-square" open>
-        <summary class="heading">Our Motivation</summary>
-        <span>
-          We worry that GDPR fines are <em>not effective</em> in changing the
-          behavior of <em>offending web-service providers</em>. We want to
-          investigate
-          <b
-            >How offending web-service providers are changing their behavior
-            after receiving a GDPR fine?</b
-          >
-        </span>
-      </details>
+      <!-- Authors -->
+      <p>
+        By the SPRINGERs: Christian Knabenhans, Mathilde Raynal, Malo Perez, &
+        Saiid El Hajj Chehade
+      </p>
+    </header>
 
-      <!-- Main Statistical Figure to Capture attention -->
-      <section id="map-section">
-        <div class="section-title">
-          <h1> Where in Europe are the most GDPR fines issued? </h1>
-          <h4 style="background-color: black"
-            >Interactive Map of Fines over Time</h4
-          >
+    <!-- Purpose -->
+
+    <details id="purpose" class="box-shadow with-top-square" open>
+      <summary class="heading">Our Motivation</summary>
+      <span>
+        We worry that GDPR fines are <em>not effective</em> in changing the
+        behavior of <em>offending web-service providers</em>. We want to
+        investigate
+        <b>How offending web-service providers are changing their behavior
+          after receiving a GDPR fine?</b>
+      </span>
+    </details>
+
+    <!-- Main Statistical Figure to Capture attention -->
+    <section id="map-section">
+      <div class="section-title">
+        <h1> Where in Europe are the most GDPR fines issued? </h1>
+        <h4 style="background-color: black">Interactive Map of Fines over Time</h4>
+      </div>
+      <div class='tooltip' id="map-tooltip"></div>
+
+      <div id="map">
+        <!-- <img class="placeholder" src="./assets/images/map-sketch.png" width="100%" height="100%" alt=" " /> -->
+      </div>
+    </section>
+
+    <!-- Navigation to Other statistics -->
+
+    <section id="nav-section">
+      <a href="#">
+        <div class="box-shadow" id="count-articles-broken">
+          <h1>10</h1>
+          <span>⚖️ Articles Broken</span>
         </div>
-        <div id="map">
-          <img
-            class="placeholder"
-            src="./assets/images/map-sketch.png"
-            width="100%"
-            height="100%"
-            alt=" "
-          />
+      </a>
+
+      <a href="#">
+        <div class="box-shadow" id="count-offending-countries">
+          <h1>10</h1>
+          <span> 🚨 Offending Countries</span>
         </div>
-      </section>
+      </a>
 
-      <!-- Navigation to Other statistics -->
+      <a href="#">
+        <div class="box-shadow" id="count-total-fines">
+          <h1> €10.5B </h1>
+          <span>💰 Total Fines</span>
+        </div>
+      </a>
+    </section>
 
-      <section id="nav-section">
-        <a href="#">
-          <div class="box-shadow" id="law-nav">
-            <h1>10</h1>
-            <span>⚖️ Articles Broken</span>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="box-shadow">
-            <h1>10</h1>
-            <span> 🚨 Offending Countries</span>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="box-shadow">
-            <h1> €10.5B </h1>
-            <span>💰 Total Fines</span>
-          </div>
-        </a>
-      </section>
-
-      <!-- Filters Section for the whole document -->
-      <section id="filters-section" class="closed">
+    <!-- Filters Section for the whole document -->
+    <section id="filters-section" class="closed">
+      <div>
+        <h1>Filters for a closer look</h1>
         <div>
-          <h1>Filters for a closer look</h1>
+          <span>
+            <label>Countries</label>
+            <select name="countries[]" id="countries" multiple>
+              <option value="DE">🇩🇪 Germany</option>
+              <option value="FR">🇫🇷 France</option>
+              <option value="IT">🇮🇹 Italy</option>
+              <option value="ES">🇪🇸 Spain</option>
+              <option value="PL">🇵🇱 Poland</option>
+              <option value="RO">🇷🇴 Romania</option>
+              <option value="GR">🇬🇷 Greece</option>
+              <option value="BE">🇧🇪 Belgium</option>
+              <option value="AT">🇦🇹 Austria</option>
+              <option value="BG">🇧🇬 Bulgaria</option>
+              <option value="LV">🇱🇻 Latvia</option>
+              <option value="SE">🇸🇪 Sweden</option>
+              <option value="GB">🇬🇧 United Kingdom</option>
+              <option value="HU">🇭🇺 Hungary</option>
+              <option value="NL">🇳🇱 Netherlands</option>
+              <option value="DK">🇩🇰 Denmark</option>
+              <option value="LT">🇱🇹 Lithuania</option>
+              <option value="CZ">🇨🇿 Czech Republic</option>
+              <option value="NO">🇳🇴 Norway</option>
+              <option value="PT">🇵🇹 Portugal</option>
+              <option value="MT">🇲🇹 Malta</option>
+              <option value="CY">🇨🇾 Cyprus</option>
+              <option value="SK">🇸🇰 Slovakia</option>
+              <option value="IS">🇮🇸 Iceland</option>
+              <option value="HR">🇭🇷 Croatia</option>
 
-          <div>
-            <span>
-              <label>Countries</label>
-              <select name="countries[]" id="countries" multiple>
-                <option value="DE">🇩🇪 Germany</option>
-                <option value="FR">🇫🇷 France</option>
-                <option value="IT">🇮🇹 Italy</option>
-                <option value="SP">🇪🇸 Spain</option>
-                <option value="CH">🇨🇭 Switzerland</option>
-              </select>
-            </span>
+            </select>
+          </span>
 
-            <span>
-              <label>Articles</label>
-              <select name="articles[]" id="articles" multiple>
-                <option value="1">Article 1</option>
-                <option value="2">Article 2</option>
-                <option value="3">Article 3</option>
-                <option value="4">Article 4</option>
-                <option value="5">Article 5</option>
-                <option value="6">Article 6</option>
-                <option value="7">Article 7</option>
-                <option value="8">Article 8</option>
-              </select>
-            </span>
+          <span>
+            <label>Articles</label>
+            <select name="articles[]" id="articles" multiple>
+              <option value='4'>Article 4</option>
+              <option value='5'>Article 5</option>
+              <option value='6'>Article 6</option>
+              <option value='7'>Article 7</option>
+              <option value='9'>Article 9</option>
+              <option value='12'>Article 12</option>
+              <option value='13'>Article 13</option>
+              <option value='14'>Article 14</option>
+              <option value='15'>Article 15</option>
+              <option value='17'>Article 17</option>
+              <option value='18'>Article 18</option>
+              <option value='21'>Article 21</option>
+              <option value='25'>Article 25</option>
+              <option value='28'>Article 28</option>
+              <option value='31'>Article 31</option>
+              <option value='32'>Article 32</option>
+              <option value='33'>Article 33</option>
+              <option value='34'>Article 34</option>
+              <option value='35'>Article 35</option>
+              <option value='36'>Article 36</option>
+              <option value='37'>Article 37</option>
+              <option value='58'>Article 58</option>
+              <option value='83'>Article 83</option>
+            </select>
+          </span>
 
-            <span>
-              <label>Date Range</label>
-              <input
-                type="text"
-                name="datefilter"
-                value=""
-                placeholder="Optional Date Range"
-              />
-            </span>
-          </div>
+          <span>
+            <label>Date Range</label>
+            <input type="text" name="datefilter" value="" placeholder="Optional Date Range" />
+          </span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="articles-section">
-        <div class="section-title">
-          <h1> How connected are the articles? </h1>
-          <h4>Correlation Circle for Article Breakage Concurrence</h4>
-        </div>
+    <section id="articles-section">
+      <div class="section-title">
+        <h1> How connected are the articles? </h1>
+        <h4>Correlation Circle for Article Breakage Concurrence</h4>
+      </div>
 
-        <div class="content">
-          <div>
-            <nav>
-              <a href="#">Article 1</a>
-              <a href="#">Article 2</a>
-              <a href="#">Article 3</a>
-              <a href="#">Article 4</a>
-              <a href="#">Article 5</a>
-              <a href="#">Article 6</a>
-              <a href="#">Article 7</a>
-              <a href="#">Article 8</a>
-              <a href="#">Article 9</a>
-            </nav>
-            <h1>Article 1</h1>
-            <p> This article is lorem ipsum ... </p>
-            <a href="#">Read more</a>
+      <div class="content">
+        <div>
+          <nav>
+            
+          </nav>
+          <h1 class="article-name">Article 1</h1>
+          <small class="chapter-name">Chapter X</small>
+          <p class="article-text"> This article is lorem ipsum ... </p>
+          <a class="article-link" href="#">Read more</a>
 
-            <div class="connections">
-              <h4>Most connected to</h4>
-              <span class="badge">Article 2</span>
-              <span class="badge">Article 2</span>
-              <span class="badge">Article 2</span>
-            </div>
-          </div>
-
-          <div class="box-shadow" id="correlation-circle">
-            <img
-              src="./assets/images/correlation-circle.png"
-              class="placeholder"
-              width="100%"
-              alt=" "
-            />
-          </div>
-        </div>
-      </section>
-
-      <section id="fines-section">
-        <div class="section-title">
-          <h1> Any repeat offenders?</h1>
-          <h4
-            >Histogram counting repeatedly fined companies over time contrasted
-            to the average size of the fine.</h4
-          >
+          
         </div>
 
-        <div class="box-shadow" id="repeat-offenders-histogram">
-          <img 
-          src="./assets/images/recividism-histogram.png"
-          class="placeholder" width="100%" alt=" " />
-          <div class="controls"> some controls here </div>
+        <div class="tooltip" id="correlation-tooltip"></div>
+        <div id="correlation-circle">
+          <!-- <img src="./assets/images/correlation-circle.png" class="placeholder" width="100%" alt=" " /> -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="other-section">
-        <div class="section-title">
-          <h1> Other Important Statistics</h1>
-          <h4
-            >Can contain all descriptive statistics of the fine price, countries
-            shares, ...</h4
-          >
-        </div>
+    <section id="fines-section">
+      <div class="section-title">
+        <h1> Any repeat offenders?</h1>
+        <h4>Histogram counting repeatedly fined companies over time contrasted
+          to the average size of the fine.</h4>
+      </div>
 
-        <div class="box-shadow plots">
-          <img class="placeholder" width="29%" alt=" " />
-          <img class="placeholder" width="29%" alt=" " />
-          <img class="placeholder" width="29%" alt=" " />
-        </div>
-      </section>
+      <div id="repeat-offenders-histogram">
+        <!-- <img src="./assets/images/recividism-histogram.png" class="placeholder" width="100%" alt=" " /> -->
+        <!-- <div class="controls"> some controls here </div> -->
+      </div>
+    </section>
 
-      <section id="other-section">
-        <div class="section-title">
-          <h1> Conclusion</h1>
-        </div>
+    <section id="other-section">
+      <div class="section-title">
+        <h1> Other Important Statistics</h1>
+        <h4>Can contain all descriptive statistics of the fine price, countries
+          shares, ...</h4>
+      </div>
 
-        Given the plots above, we will write an answer to the questions we asked
-        earlier.
-      </section>
-    </main>
-    <footer>
-      2025 © Christian Knabenhans, Mathilde Raynal, Malo Perez, & Saiid El Hajj
-      Chehade
-    </footer>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
-    ></script>
+      <div class="box-shadow plots">
+        <img class="placeholder" width="29%" alt=" " />
+        <img class="placeholder" width="29%" alt=" " />
+        <img class="placeholder" width="29%" alt=" " />
+      </div>
+    </section>
 
-    <script src="./scripts/plots.js" type="module"></script>
+    <section id="other-section">
+      <div class="section-title">
+        <h1> Conclusion</h1>
+      </div>
 
-    <!-- Date Range Imports  -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
-    ></script>
+      Given the plots above, we will write an answer to the questions we asked
+      earlier.
+    </section>
+  </main>
+  <footer>
+    2025 © Christian Knabenhans, Mathilde Raynal, Malo Perez, & Saiid El Hajj
+    Chehade
+  </footer>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 
-    <script src="./scripts/filters.js"></script>
-  </body>
+  <script src="./scripts/plots.js" type="module"></script>
+
+  <!-- Date Range Imports  -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+  <script src="./scripts/filters.js"></script>
+</body>
+
 </html>

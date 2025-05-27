@@ -277,6 +277,7 @@ function onDateRangeFilterChange(newDateRange, fromDropdown = false) {
     const { countries, fromDropdown } = event.detail;
 
     if (!fromDropdown) {
+      CountriesFilter.clearAll();
       CountriesFilter.select(countries);
     }
   });
@@ -303,6 +304,8 @@ function onDateRangeFilterChange(newDateRange, fromDropdown = false) {
     {
       //   opens: "left",
       autoUpdateInput: false,
+      minDate: "01/01/1970",
+      maxDate: "02/28/2020",
       locale: {
         cancelLabel: "Clear",
       },
@@ -331,6 +334,7 @@ function onDateRangeFilterChange(newDateRange, fromDropdown = false) {
     "cancel.daterangepicker",
     function (ev, picker) {
       $(this).val("");
+      onDateRangeFilterChange({}, true);
     }
   );
 
