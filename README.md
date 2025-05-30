@@ -9,6 +9,14 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
+## Running the code
+To access the visualization, run any web server in `/website`, and go to `localhost` in your browser. 
+For example: 
+```bash
+cd website
+python -m http.server
+```
+
 ## Milestone 1 (21st March, 5pm)
 
 **10% of the final grade**
@@ -51,6 +59,9 @@ Please, fill the following sections about your project.
 ## Milestone 3 (30th May, 5pm)
 
 **80% of the final grade**
+
+
+
 
 
 ## Late policy
