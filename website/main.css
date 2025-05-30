@@ -238,7 +238,6 @@ section {
     width: 90vw;
     height: 40rem;
     margin-top:1rem;
-    margin-left:20rem;
     transform: translateX(-20%);
     /* mask-image: 
         linear-gradient(to bottom, transparent 0%, black 10%), 
