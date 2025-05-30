@@ -238,13 +238,13 @@ section {
     width: 90vw;
     height: 40rem;
     margin-top:1rem;
+    margin-left:20rem;
     transform: translateX(-20%);
     /* mask-image: 
         linear-gradient(to bottom, transparent 0%, black 10%), 
         linear-gradient(to left, transparent 6%, black 25%, black 75%, transparent 100%);
     mask-composite: intersect; */
     border-bottom: 1px solid var(--text-color);
-
 }
 
 #map > svg {
