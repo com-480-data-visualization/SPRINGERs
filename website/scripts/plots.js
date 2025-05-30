@@ -660,7 +660,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
       .attr("class", "y-axis")
       .call(d3.axisLeft(y).ticks(10, "%"))
       .append("text")
-      .attr("fill", "#000")
+      .attr("fill", "white")
       .attr("transform", "rotate(-90)")
       .attr("y", -margin.left + 10)
       .attr("x", -height / 2)
